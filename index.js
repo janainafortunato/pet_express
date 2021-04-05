@@ -21,8 +21,8 @@ app.post('/pets', (request, response) => {
 });
 
 app.get('/pets/:nome', (request, response) => {
-    
-    return response.send(petshop.buscarPet());
+    const {nome} = request.params;
+    return response.json(petshop.buscarPet(nome));
 
 }); 
 
